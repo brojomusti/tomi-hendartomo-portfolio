@@ -1,0 +1,1450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tomi Hendartomo | Sustainability Professional</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1a5d1a;
+            --secondary: #2e8b57;
+            --light: #f8fff8;
+            --dark: #1a3a1a;
+            --accent: #8fbc8f;
+            --gradient: linear-gradient(135deg, #1a5d1a, #2e8b57);
+            --text: #333;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: var(--gradient);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            color: #8fbc8f;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: white;
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+            background: url('https://placehold.co/1920x1080/1a5d1a/ffffff?text=Nature+Background') no-repeat center center/cover;
+            position: relative;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(26, 93, 26, 0.85);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: white;
+            line-height: 1.2;
+        }
+        
+        .hero h1 span {
+            color: var(--accent);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #e0e0e0;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.1rem;
+            color: var(--accent);
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-right: 1rem;
+        }
+        
+        .btn:hover {
+            background: #2e8b57;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(143, 188, 143, 0.3);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--accent);
+            color: var(--accent);
+        }
+        
+        .btn-outline:hover {
+            background: var(--accent);
+            color: white;
+        }
+        
+        /* About Section */
+        .about {
+            padding: 100px 0;
+            background: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            font-size: 2.5rem;
+            color: var(--primary);
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .about-img {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border: 5px solid var(--accent);
+        }
+        
+        .about-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .about-img:hover img {
+            transform: scale(1.05);
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        .about-text p {
+            margin-bottom: 1.5rem;
+            color: #555;
+            text-align: justify;
+        }
+        
+        .professional-summary {
+            background: #f0f8f0;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 5px solid var(--accent);
+            margin: 20px 0;
+        }
+        
+        .professional-summary h4 {
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        /* Expertise Section */
+        .expertise {
+            padding: 100px 0;
+            background: #f0f8f0;
+        }
+        
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .expertise-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            text-align: center;
+            border-top: 4px solid var(--accent);
+        }
+        
+        .expertise-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .expertise-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .expertise-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        .expertise-card p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+        
+        /* Experience Section */
+        .experience {
+            padding: 100px 0;
+            background: white;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: var(--accent);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+            border-radius: 3px;
+        }
+        
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -12px;
+            background-color: white;
+            border: 4px solid var(--primary);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        
+        .timeline-item.left {
+            left: 0;
+        }
+        
+        .timeline-item.right {
+            left: 50%;
+        }
+        
+        .timeline-item.right::after {
+            left: -12px;
+        }
+        
+        .timeline-content {
+            padding: 20px;
+            background-color: white;
+            position: relative;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border: 1px solid #eee;
+        }
+        
+        .timeline-content h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+        
+        .timeline-content h4 {
+            color: var(--secondary);
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+        
+        .timeline-content p {
+            color: #666;
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+        }
+        
+        .timeline-content .date {
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: block;
+        }
+        
+        /* Projects Section */
+        .projects {
+            padding: 100px 0;
+            background: #f0f8f0;
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .project-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .project-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .project-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .project-card:hover .project-img img {
+            transform: scale(1.1);
+        }
+        
+        .project-content {
+            padding: 25px;
+        }
+        
+        .project-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        .project-content p {
+            color: #666;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+        
+        .project-links {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .project-link {
+            background: var(--accent);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .project-link:hover {
+            background: var(--primary);
+            transform: translateY(-2px);
+        }
+        
+        /* Skills Section */
+        .skills {
+            padding: 100px 0;
+            background: white;
+        }
+        
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        
+        .skill-category {
+            background: #f8fff8;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e0f0e0;
+        }
+        
+        .skill-category h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .skill-category h3 i {
+            margin-right: 10px;
+            color: var(--accent);
+        }
+        
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .skill-tag {
+            background: var(--gradient);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
+        /* Education Section */
+        .education {
+            padding: 100px 0;
+            background: #f0f8f0;
+        }
+        
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .education-item {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-top: 4px solid var(--accent);
+        }
+        
+        .education-item h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: 1.4rem;
+        }
+        
+        .education-item h4 {
+            color: var(--secondary);
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .education-item p {
+            color: #666;
+        }
+        
+        /* Certifications Section */
+        .certifications {
+            padding: 100px 0;
+            background: white;
+        }
+        
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .certification-card {
+            background: #f8fff8;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #e0f0e0;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .certification-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .certification-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .certification-card h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .certification-card p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 100px 0;
+            background: white;
+        }
+        
+        .contact-content {
+            display: flex;
+            gap: 50px;
+        }
+        
+        .contact-info {
+            flex: 1;
+        }
+        
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        .contact-info p {
+            margin-bottom: 30px;
+            color: #555;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .contact-text h4 {
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+        
+        .contact-text p, .contact-text a {
+            color: #666;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .contact-text a:hover {
+            color: var(--accent);
+        }
+        
+        .contact-form {
+            flex: 1;
+            background: #f8fff8;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e0f0e0;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+        
+        textarea.form-control {
+            resize: vertical;
+            min-height: 150px;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column {
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--accent);
+        }
+        
+        .footer-column p, .footer-column a {
+            color: #ddd;
+            margin-bottom: 10px;
+            display: block;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-column a:hover {
+            color: var(--accent);
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background: var(--accent);
+            transform: translateY(-5px);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+        
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--accent);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(143, 188, 143, 0.4);
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 999;
+        }
+        
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background: #2e8b57;
+            transform: translateY(-5px);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .contact-content {
+                flex-direction: column;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: var(--primary);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: left 0.3s ease;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 1rem 0;
+            }
+            
+            .hero {
+                text-align: center;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item.left::after, .timeline-item.right::after {
+                left: 15px;
+            }
+            
+            .timeline-item.right {
+                left: 0;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .btn {
+                display: block;
+                margin: 10px auto;
+                width: 80%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <i class="fas fa-leaf"></i>
+                    Tomi Hendartomo
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#expertise">Expertise</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Sustainability <span>Leader</span><br>Environmental Strategist</h1>
+                <p class="hero-subtitle">Driving sustainable development and environmental compliance for over 13 years in the palm oil industry</p>
+                <p>Expert in GHG inventory, climate action, EHS systems, and international certification standards (ISPO, RSPO). Proven success in developing integrated sustainability strategies and stakeholder engagement.</p>
+                <div class="hero-btns">
+                    <a href="#projects" class="btn">View My Work</a>
+                    <a href="#contact" class="btn btn-outline">Get In Touch</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-img">
+                    <img src="https://placehold.co/600x700/1a5d1a/ffffff?text=Tomi+Hendartomo" alt="Tomi Hendartomo">
+                </div>
+                <div class="about-text">
+                    <h3>Sustainability Implementation Specialist</h3>
+                    <div class="professional-summary">
+                        <h4><i class="fas fa-bullseye"></i> Professional Summary</h4>
+                        <p>Visionary and strategic Sustainability Implementation professional with over 13 years of experience leading environmental compliance, climate action, and sustainable development initiatives. Proven success in developing integrated sustainability strategies, stakeholder engagement, and cross-functional leadership. Expert in GHG inventory, water conservation, EHS systems, and international certification standards such as ISPO and RSPO. Strong leadership capabilities with a track record in driving impact through innovation, education, and policy alignment.</p>
+                    </div>
+                    <p>I am a dedicated sustainability professional with extensive experience in the palm oil industry, specializing in environmental compliance, climate action, and sustainable development. My expertise spans GHG inventory, water conservation, EHS systems, and international certification standards such as ISPO and RSPO.</p>
+                    <p>Throughout my career, I have demonstrated strong leadership capabilities in driving impact through innovation, education, and policy alignment. I am passionate about creating sustainable solutions that balance environmental protection with economic development.</p>
+                    <p>My technical skills are complemented by my certifications as a Lead Auditor for ISPO and OHSAS 18001, as well as my expertise in environmental management and greenhouse gas mitigation. I also bring innovative approaches to sustainability through my work with machine learning and data analysis.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expertise Section -->
+    <section class="expertise" id="expertise">
+        <div class="container">
+            <h2 class="section-title">Areas of Expertise</h2>
+            <div class="expertise-grid">
+                <div class="expertise-card">
+                    <div class="expertise-icon">
+                        <i class="fas fa-wind"></i>
+                    </div>
+                    <h3>Climate Action</h3>
+                    <p>Expert in GHG inventory, carbon footprint analysis, and mitigation strategies. Developed comprehensive climate action plans aligned with international standards.</p>
+                </div>
+                <div class="expertise-card">
+                    <div class="expertise-icon">
+                        <i class="fas fa-water"></i>
+                    </div>
+                    <h3>Water Stewardship</h3>
+                    <p>Specialized in water conservation, wastewater management, and emission monitoring systems for industrial operations.</p>
+                </div>
+                <div class="expertise-card">
+                    <div class="expertise-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3>Certification Standards</h3>
+                    <p>Lead Auditor for ISPO and RSPO certifications with extensive experience in ensuring compliance with sustainability standards.</p>
+                </div>
+                <div class="expertise-card">
+                    <div class="expertise-icon">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <h3>EHS Management</h3>
+                    <p>Implemented ISO 9001, ISO 14001, and OHSAS 18001 systems for palm oil mills and plantations.</p>
+                </div>
+                <div class="expertise-card">
+                    <div class="expertise-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>ESG Reporting</h3>
+                    <p>Expertise in environmental, social, and governance reporting with focus on transparency and stakeholder engagement.</p>
+                </div>
+                <div class="expertise-card">
+                    <div class="expertise-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Stakeholder Engagement</h3>
+                    <p>Proven success in building relationships with government agencies, NGOs, and community stakeholders.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="experience" id="experience">
+        <div class="container">
+            <h2 class="section-title">Professional Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <span class="date">January 2015 - Present</span>
+                        <h3>Sustainability Project Coordinator</h3>
+                        <h4>PT. Eagle High Plantations Tbk | Jakarta Selatan, DKI Jakarta</h4>
+                        <p>• Led development and execution of GHG Inventory, Carbon Footprint, and mitigation strategies</p>
+                        <p>• Ensured sustainability compliance aligned with ISPO & RSPO certification requirements</p>
+                        <p>• Conducted traceability and supply chain audits with major stakeholders (GAR, Wilmar, APICAL, etc.)</p>
+                        <p>• Facilitated SOP development for environmental management and fire safety protocols</p>
+                        <p>• Led environment and sustainability compliance evaluations to identify problem areas and develop targeted solutions</p>
+                        <p>• Monitored environmental compliance with government regulations / PROPER</p>
+                        <p>• Managed Fire Safety systems and protocols</p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <span class="date">January 2011 - December 2014</span>
+                        <h3>Environment Health and Safety Assistant Manager</h3>
+                        <h4>PT. BW Plantations Tbk | Jakarta Selatan, DKI Jakarta</h4>
+                        <p>• Managed Environment Health and Safety and implemented ISO 9001, ISO 14001 and OHSAS 18001 Certification for palm oil mills</p>
+                        <p>• Created and implemented clear health and safety advice for cross-company adherence</p>
+                        <p>• Conducted site inspections to determine hazard-free environment and eliminate risks</p>
+                        <p>• Developed training sessions for workforces based on policy updates and safety improvements</p>
+                        <p>• Monitored environmental compliance with government regulations, including Hazardous Waste Management</p>
+                        <p>• Managed Wastewater Management and Emission Monitoring systems</p>
+                    </div>
+                </div>
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <span class="date">January 2008 - December 2010</span>
+                        <h3>Environmental Specialist</h3>
+                        <h4>PT. SMART Tbk | Jakarta Selatan, DKI Jakarta</h4>
+                        <p>• Monitored environmental compliance with government regulations for Hazardous Waste Management, Wastewater Management and Emission Monitoring</p>
+                        <p>• Observed progress of environmental improvement programmes and provided recommendations</p>
+                        <p>• Verified compliance with hazardous waste regulations through site inspections</p>
+                        <p>• Implemented and maintained the environment management system</p>
+                        <p>• Outlined procedures for cleaning up contaminated sites</p>
+                        <p>• Supervised development of systems for managing water, air and soil quality</p>
+                        <p>• Devised waste recycling and management strategies for pollution prevention</p>
+                        <p>• Collected air, water and soil samples and reported pollution incidents</p>
+                        <p>• Researched Social Impact Assessment in villages around plantation companies</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <h2 class="section-title">Sustainability Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="https://placehold.co/600x400/1a5d1a/ffffff?text=GHG+Calculator" alt="GHG Emissions Calculator">
+                    </div>
+                    <div class="project-content">
+                        <h3>GHG Emissions Calculator</h3>
+                        <p>Developed innovative GHG emissions calculator tools using machine learning and data analysis to help companies measure and reduce their carbon footprint.</p>
+                        <div class="project-links">
+                            <a href="https://huggingface.co/spaces/Hendartomo/vehicle-ghg-emissions-calculator" target="_blank" class="project-link">
+                                <i class="fas fa-car"></i> Vehicle Calculator
+                            </a>
+                            <a href="https://huggingface.co/spaces/Masdarto/palm-oil-ghg-scope-3-emissions" target="_blank" class="project-link">
+                                <i class="fas fa-tree"></i> Palm Oil Calculator
+                            </a>
+                            <a href="https://kalkulator-ghg-scope-3.vercel.app/" target="_blank" class="project-link">
+                                <i class="fas fa-globe"></i> Web App
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="https://placehold.co/600x400/2e8b57/ffffff?text=RSPO+ISPO+Certification" alt="RSPO and ISPO Certification">
+                    </div>
+                    <div class="project-content">
+                        <h3>RSPO and ISPO Certification</h3>
+                        <p>As a Lead Auditor, supporting multiple palm oil companies through the ISPO and RSPO certification process, ensuring compliance with environmental, carbon footprint and social standards.</p>
+                        <div class="project-links">
+                            <a href="https://drive.google.com/file/d/1GRcGhBm9GRKQgB9ElDT_11yS7XzPNrYb/view?usp=sharing" target="_blank" class="project-link">
+                                <i class="fas fa-file-pdf"></i> Case Study
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="https://placehold.co/600x400/1a5d1a/ffffff?text=Water+Management" alt="Water Management">
+                    </div>
+                    <div class="project-content">
+                        <h3>Water Conservation Systems</h3>
+                        <p>Designed and implemented comprehensive water management systems for palm oil mills, reducing water consumption by 30% and improving wastewater treatment efficiency.</p>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fas fa-info-circle"></i> Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+        <div class="container">
+            <h2 class="section-title">Professional Skills</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3><i class="fas fa-bullseye"></i> Sustainability Leadership</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Strategic Sustainability Leadership</span>
+                        <span class="skill-tag">Climate & Water Stewardship Planning</span>
+                        <span class="skill-tag">Stakeholder & Government Relations</span>
+                        <span class="skill-tag">ESG and Sustainable Reporting</span>
+                        <span class="skill-tag">Project Portfolio & Budget Management</span>
+                        <span class="skill-tag">Team Leadership and Capacity Building</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-certificate"></i> Technical Expertise</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">GHG Inventory & Carbon Mitigation</span>
+                        <span class="skill-tag">Environmental Compliance & Certification</span>
+                        <span class="skill-tag">PROPER Compliance</span>
+                        <span class="skill-tag">RSPO Standards</span>
+                        <span class="skill-tag">ISPO Standards</span>
+                        <span class="skill-tag">ISO 14001</span>
+                        <span class="skill-tag">OHSAS 18001</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-flask"></i> Environmental Management</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Data Analysis</span>
+                        <span class="skill-tag">Environmental Monitoring</span>
+                        <span class="skill-tag">Hazardous Waste Management</span>
+                        <span class="skill-tag">Wastewater Management</span>
+                        <span class="skill-tag">Emission Monitoring</span>
+                        <span class="skill-tag">Machine Learning</span>
+                        <span class="skill-tag">Data Analysis</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="education" id="education">
+        <div class="container">
+            <h2 class="section-title">Education & Certifications</h2>
+            <div class="education-grid">
+                <div class="education-item">
+                    <h3>Master of Science in Environmental Science</h3>
+                    <h4>Gadjah Mada University, Yogyakarta</h4>
+                    <p>Advanced studies in environmental systems, sustainability frameworks, and environmental policy analysis. Research focused on sustainable development in agricultural industries.</p>
+                </div>
+                <div class="education-item">
+                    <h3>Bachelor in Chemical Engineering</h3>
+                    <h4>Gadjah Mada University, Yogyakarta</h4>
+                    <p>Foundational education in chemical processes, environmental engineering principles, and industrial systems design with focus on sustainable applications.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section class="certifications">
+        <div class="container">
+            <h2 class="section-title">Professional Certifications</h2>
+            <div class="certifications-grid">
+                <div class="certification-card">
+                    <div class="certification-icon">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <h3>Lead Auditor ISPO</h3>
+                    <p>Indonesian Sustainable Palm Oil certification with expertise in auditing and compliance verification.</p>
+                </div>
+                <div class="certification-card">
+                    <div class="certification-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Environmental Management Certified</h3>
+                    <p>Comprehensive certification in environmental management systems and sustainable practices.</p>
+                </div>
+                <div class="certification-card">
+                    <div class="certification-icon">
+                        <i class="fas fa-wind"></i>
+                    </div>
+                    <h3>Green Houses Gasses Mitigation Certified</h3>
+                    <p>Specialized certification in GHG inventory, carbon footprint analysis, and mitigation strategies.</p>
+                </div>
+                <div class="certification-card">
+                    <div class="certification-icon">
+                        <i class="fas fa-hard-hat"></i>
+                    </div>
+                    <h3>Lead Auditor OHSAS 18001 Certified</h3>
+                    <p>Occupational Health and Safety Assessment Series certification with auditing expertise.</p>
+                </div>
+                <div class="certification-card">
+                    <div class="certification-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Machine Learning and Data Analyst Certified</h3>
+                    <p>Advanced certification in data analysis and machine learning applications for sustainability metrics.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Connect With Me</h3>
+                    <p>I'm always interested in new sustainability challenges and opportunities to collaborate on environmental initiatives. Feel free to reach out to discuss potential projects or partnerships.</p>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Email</h4>
+                            <a href="mailto:tompirus@gmail.com">tompirus@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Phone</h4>
+                            <a href="tel:+6281285327101">+62 812 8532 7101</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Location</h4>
+                            <p>Jakarta Selatan, DKI Jakarta, Indonesia</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Subject">
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Tomi Hendartomo</h3>
+                    <p>Sustainability Implementation Specialist with 13+ years of experience in environmental compliance, climate action, and sustainable development in the palm oil industry.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-researchgate"></i></a>
+                        <a href="https://huggingface.co/Masdarto"><i class="fas fa-code"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#expertise">Expertise</a>
+                    <a href="#experience">Experience</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#education">Education</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Expertise Areas</h3>
+                    <a href="#">Sustainability Strategy</a>
+                    <a href="#">Climate Action</a>
+                    <a href="#">ESG Reporting</a>
+                    <a href="#">Environmental Compliance</a>
+                    <a href="#">GHG Management</a>
+                    <a href="#">Water Stewardship</a>
+                    <a href="#">Certification Standards</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-envelope"></i> tompirus@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> +62 812 8532 7101</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Jakarta Selatan, DKI Jakarta</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Tomi Hendartomo. All Rights Reserved. Sustainability Professional Portfolio.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <div class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script>
+        // Mobile Navigation
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Back to top button
+        const backToTopButton = document.querySelector('.back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('show');
+            } else {
+                backToTopButton.classList.remove('show');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Form submission
+        const contactForm = document.getElementById('contactForm');
+        
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Get form values
+            const name = contactForm.querySelector('input[type="text"]').value;
+            const email = contactForm.querySelector('input[type="email"]').value;
+            const message = contactForm.querySelector('textarea').value;
+            
+            // In a real application, you would send this data to a server
+            alert(`Thank you, ${name}! Your message has been sent. I'll get back to you soon regarding your sustainability inquiry.`);
+            
+            // Reset form
+            contactForm.reset();
+        });
+        
+        // Animation on scroll
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.expertise-card, .project-card, .education-item, .certification-card, .timeline-item');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+                
+                if (elementPosition < screenPosition) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+        
+        // Set initial state for animation
+        document.querySelectorAll('.expertise-card, .project-card, .education-item, .certification-card, .timeline-item').forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(30px)';
+            element.style.transition = 'all 0.6s ease';
+        });
+        
+        // Run animation on scroll
+        window.addEventListener('scroll', animateOnScroll);
+        // Run once on page load
+        animateOnScroll();
+    </script>
+</body>
+</html>
